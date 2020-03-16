@@ -1,4 +1,5 @@
-CREATE TABLE rooms (id SERIAL PRIMARY KEY,
+CREATE TABLE rooms (
+	id SERIAL PRIMARY KEY,
 	name VARCHAR(60),
 	date VARCHAR(60),
 	description VARCHAR(240),
@@ -11,7 +12,7 @@ CREATE TABLE rooms (id SERIAL PRIMARY KEY,
 -- CREATE DATABASE bnb_test;
 
 -- 2. create table 
--- command see above
+-- command see line 1-6
 
 -- 3. insert value 
 -- INSERT INTO rooms (description) values ('This is a test room');
