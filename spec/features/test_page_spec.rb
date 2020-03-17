@@ -3,10 +3,10 @@ feature 'Viewing test page' do
 		visit('/test')
     expect(page).to have_content "Test page"
 
-  
+
   end
   scenario 'visit home page' do
    visit('/')
-   expect(page).to have_content "ViralBnB"
+   expect(page).to have_content "VyralBnB"
   end
 end
