@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/projects/bnb/BnB_project/spec/features/test_page_spec.rb": {
+      "/Users/ziyaozheng/Makers_project/bnb_project/spec/features/test_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -13,10 +13,6 @@
         ]
       }
     },
-<<<<<<< HEAD
-    "timestamp": 1584440228
-=======
-    "timestamp": 1584396348
->>>>>>> homepage
+    "timestamp": 1584452992
   }
 }
