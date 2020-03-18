@@ -3,7 +3,7 @@
 -- 2. Create Room table
 CREATE TABLE rooms (
 	id SERIAL PRIMARY KEY,
-	name VARCHAR(60),
+	room_name VARCHAR(60),
 	date VARCHAR(60),
 	description VARCHAR(240),
 	price VARCHAR(60),
@@ -11,8 +11,8 @@ CREATE TABLE rooms (
   availability  VARCHAR(60)
  );
 
--- Insert test values
-INSERT INTO rooms (name, date, description, price, landlord_name, availability) VALUES ('Test room', '18/3/20', 'Test description', 100, 'Test landlord', 'Available');
+-- Insert demo values
+INSERT INTO rooms (room_name, date, description, price, landlord_name, availability) VALUES ('Seaview', '18/3/20', 'Room with view of the sea', 100, 'Olivia', 'Available');
 
  -- 3. create landlord table
  CREATE TABLE landlord (
@@ -20,11 +20,17 @@ INSERT INTO rooms (name, date, description, price, landlord_name, availability) 
  	landlord_name VARCHAR(60)
   );
 
+  -- Insert demo values
+INSERT INTO landlord (landlord_name) VALUES ('Olivia');
+
 --  4. create renter table
 CREATE TABLE renter (
 	id SERIAL PRIMARY KEY,
 	renter_name VARCHAR(60)
  );
+
+  -- Insert demo values
+INSERT INTO renter (renter_name) VALUES ('Chloe');
 
 --  5. create bookingRequest table
 CREATE TABLE bookingRequest (
@@ -34,3 +40,10 @@ CREATE TABLE bookingRequest (
     date VARCHAR(60),
     request_status VARCHAR(60)
  );
+
+-- Insert demo values
+INSERT INTO bookingRequest (renter_name, room_name, date, request_status) VALUES ('Chloe', 'Seaview', '18/3/20', 'Pending')
+
+ALTER TABLE rooms CHANGE name room_name VARCHAR(60);
+
+EXEC sp_RENAME 'rooms.name' , 'room_name', 'COLUMN';
