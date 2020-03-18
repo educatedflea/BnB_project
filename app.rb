@@ -8,17 +8,15 @@ class BnB<Sinatra::Base
  get '/' do
 	erb :index
  end
+
  get '/landlord/sign_in' do
   erb :landlord_signin
  end
+ 
  get '/account/landlord' do
 	 erb :landlord_dashboard
  end
-
- get '/account/renter' do
- 	erb :renter_dashboard
- end
-
+ 
  get '/list_property' do
 	 erb :list_property
  end
@@ -26,6 +24,15 @@ class BnB<Sinatra::Base
  get '/pending_requests' do
  	erb :pending_requests
  end
+ 
+ get '/renter/sign_in' do
+  erb :renter_signin
+ end
+ 
+ get '/account/renter' do
+  erb :renter_dashboard
+ end
+
 
 	run! if app_file ==$0
 end
