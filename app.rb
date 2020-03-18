@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative './lib/landlord'
+require_relative './lib/rooms'
 
 class BnB<Sinatra::Base
 	get '/test' do
@@ -22,6 +24,7 @@ class BnB<Sinatra::Base
  end
 
  post '/create_listing' do
+	 Room.create(room_name: params[:room_name], date: params[:date], description: params[:description], price: params[:price])
  	redirect '/account/renter'
  end
 
@@ -34,8 +37,8 @@ class BnB<Sinatra::Base
  end
 
  get '/account/renter' do
+	 @rooms = Room.all
   erb :renter_dashboard
-	# this needs to show all listings
  end
 
 
