@@ -1,11 +1,12 @@
 body {
     background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+    width: 100vw;
+    height: 100vh;
     display: flex;
-
+    justify-content: center;
+    align-items: center;
 }
 
-.card {
-    width: 500px;
-    height: 500px;
-    background-color: white;
+.custom-container {
+    width: 250px;
 }
