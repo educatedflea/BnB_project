@@ -17,8 +17,8 @@ class BnB<Sinatra::Base
 	 erb :landlord_dashboard
  end
  
- get '/list_property' do
-	 erb :list_property
+ get '/create_listing' do
+	 erb :create_listing
  end
 
  get '/pending_requests' do
@@ -28,7 +28,7 @@ class BnB<Sinatra::Base
  get '/renter/sign_in' do
   erb :renter_signin
  end
- 
+
  get '/account/renter' do
   erb :renter_dashboard
  end
