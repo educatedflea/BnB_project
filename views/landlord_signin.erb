@@ -13,17 +13,22 @@
 <body>
     <div class="container custom-container">
       <div class="col">
-        <h1 class="text-center">VyralBnB</h1>
+        <h1 class="text-center">Landlord signin</h1>
       </div>
-      <div class="row justify-content-around">
-        <form method="get" action="/account/landlord">
-        <%# The button style is from bootstrap https://getbootstrap.com/docs/4.4/components/buttons/ %>
-          <button class="btn btn-outline-dark">Landlord Login</button> 
-        </form>
-        <form method="get" action="/account/renter">
-          <button class="btn btn-outline-dark">Renter Login</button>
-        </form>
-      </div>
-    </div>
+    
+
+    <form method="get" action="/account/landlord">
+  <div class="form-group" >
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 </body>
 </html>

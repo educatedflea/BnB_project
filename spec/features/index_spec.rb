@@ -1,8 +1,8 @@
 feature 'Going to landlord path from index' do
-  scenario 'Directing to landlord dashboard' do
+  scenario 'Directing to landlord login' do
     visit ('/')
     click_button "Landlord Login"
-    expect(page).to have_content "Test landlord_dashboard"
+    expect(page).to have_content "Landlord signin"
   end
 end
 
