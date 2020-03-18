@@ -8,7 +8,9 @@ class BnB<Sinatra::Base
  get '/' do
 	erb :index
  end
-
+ get '/landlord/sign_in' do
+  erb :landlord_signin
+ end
  get '/account/landlord' do
 	 erb :landlord_dashboard
  end
