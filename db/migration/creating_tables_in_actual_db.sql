@@ -42,7 +42,7 @@ CREATE TABLE bookingRequest (
  );
 
 -- Insert demo values
-INSERT INTO bookingRequest (renter_name, room_name, date, request_status) VALUES ('Chloe', 'Seaview', '18/3/20', 'Pending')
+INSERT INTO bookingRequest (renter_name, room_name, date, request_status) VALUES ('Chloe', 'Seaview', '18/3/20', 'Pending');
 
 ALTER TABLE rooms CHANGE name room_name VARCHAR(60);
 

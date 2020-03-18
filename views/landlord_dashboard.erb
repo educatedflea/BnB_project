@@ -11,6 +11,7 @@ Test landlord_dashboard
 <body>
   <%# <h1>Test landlord_dashboard h1 inside the body</h1> %>
     <div class="card">
+    <h2>Hi <%= @landlord_name.landlord_name %>!</h2>
       <form method="get" action="/create_listing">
       <button>List a new property</button>
       </form>

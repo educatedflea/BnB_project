@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/landlord'
 
 class BnB<Sinatra::Base
 	get '/test' do
@@ -14,6 +15,7 @@ class BnB<Sinatra::Base
  end
 
  get '/account/landlord' do
+	 @landlord_name = Landlord.fetch_landlord_name[0]
 	 erb :landlord_dashboard
  end
 
