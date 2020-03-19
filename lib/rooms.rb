@@ -25,13 +25,26 @@ attr_reader :id, :room_name, :date, :description, :price, :landlord_name, :avail
   Room.new(room_name: room['room_name'], date: room['date'], description: room['description'], price: room['price'])
   end
 end
+
 def self.create(room_name:, date:, description:, price:)
   if ENV['ENVIRONMENT'] == 'test'
     connection = PG.connect(dbname: 'bnb_test')
   else
+     "in the actual db"
     connection = PG.connect(dbname: 'bnb')
 end
-result = connection.exec("INSERT INTO rooms (room_name, date, description, price) VALUES ('#{room_name}', '#{date}', '#{description}', '#{price}');")
-# Room.new(room_name: room['room_name'], date: room['date'], description: room['description'], price: room['price'])
+  result = connection.exec("INSERT INTO rooms (room_name, date, description, price) VALUES ('#{room_name}', '#{date}', '#{description}', '#{price}') RETURNING room_name,date,description,price;")
+  Room.new(room_name: result[0]['room_name'], date: result[0]['date'], description: result[0]['description'], price: result[0]['price'])
 end
+
+# def self.create(url:, title:)
+#   # return false unless true #is_url(url)
+#   if ENV['ENVIRONMENT'] == 'test'
+#     connection = PG.connect(dbname: 'bookmark_manager_test')
+#   else 
+#     connection = PG.connect(dbname: 'bookmark_manager')
+#   end 
+#   result = connection.exec("INSERT INTO bookmarks (title, url) VALUES('#{title}','#{url}') RETURNING id, url, title")
+#   Bookmark.new(id: result[0]["id"], title: result[0]['title'], url: result[0]['url'])
+# end 
 end
