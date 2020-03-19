@@ -2,7 +2,6 @@ require 'sinatra/base'
 require_relative './lib/landlord'
 require_relative './lib/rooms'
 require_relative './lib/renter'
-require_relative './lib/rooms'
 
 class BnB<Sinatra::Base
 	get '/test' do
