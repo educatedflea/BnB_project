@@ -36,6 +36,11 @@ class BnB<Sinatra::Base
  end
 
  get '/renter_sign_in' do
+	erb :renter_signin
+ end
+
+ post '/renter_sign_in' do
+	 Renter.create(renter_name: params[:renter_name])
   erb :renter_signin
  end
 
