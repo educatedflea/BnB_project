@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/landlord'
 require_relative './lib/rooms'
+require_relative './lib/renter'
 
 class BnB<Sinatra::Base
 	get '/test' do
@@ -43,7 +44,7 @@ class BnB<Sinatra::Base
 	 @rooms = Room.all
   erb :renter_dashboard
  end
-  
+
  get '/request' do
   erb :request
  end
