@@ -8,6 +8,7 @@ class Landlord
 	end 
 	
 	def self.fetch_landlord_name
+    
 		if ENV['ENVIRONMENT'] == 'test'
 			connection = PG.connect(dbname: 'bnb_test')
 		else 

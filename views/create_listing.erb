@@ -3,36 +3,37 @@
 
 <%# head tags : https://www.w3schools.com/tags/tag_head.asp %>
 <head>
-    <title>Create listing</title>
-    <%# here we link the css file %>
-    <%# This is bootstrap library %>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+  <title>Create listing</title>
+  <%# here we link the css file %>
+  <%# This is bootstrap library %>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 </head>
 
 <body>
-    <div class="container custom-container">
-      <div class="col">
-        <h1 class="text-center">Create your listing</h1>
-      </div>
+  <div class="container custom-container">
+    <div class="col">
+      <h1 class="text-center">Create your listing</h1>
+    </div>
 
-<!-- method needs to be "post" below but need to understand
-where the info will go as we have 4 tables
-  -->
-    <form method="post" action="/create_listing">
+<form method="post" action="/create_listing">
   <div class="form-group" >
-    <label for="Room_name">Room name</label>
-    <input type="text" class="form-control" id="Room_name" aria-describedby="Room name">
+    <label for="room_name">Room name</label>
+    <input type="text" class="form-control" id="room_name" name="room_name" aria-describedby="Room name">
   </div>
+  
   <div class="form-group">
     <label for="Short_description">Short description</label>
-    <input type="text" class="form-control" id="Short_description">
+    <input type="text" class="form-control" id="Short_description" name="description">
   </div>
+  
   <div class="form-group">
     <label for="Price_per_night">Price per night </label>
-    <input type="text" class="form-control" id="Price_per_night">
+    <input type="text" class="form-control" id="Price_per_night" name="price">
   </div>
+  
   <button type="submit" class="btn btn-primary">Submit</button>
+
 </form>
 </body>
 
