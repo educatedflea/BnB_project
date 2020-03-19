@@ -1,14 +1,23 @@
 require 'pg'
 
-class Booking 
+class Booking
 
-  attr_reader :id, :room_name, :date, :description, :price, :landlord_name, :availability
-  def initialize(room_name:, date:, description:, price:)
-    @id = id
+  attr_reader :renter_name, :room_name, :date, :request_status
+  def initialize(renter_name:, room_name:, date:, request_status:)
+    @renter_name = renter_name
     @room_name = room_name
     @date = date
-    @description = description
-    @price = price
-    @landlord_name = landlord_name
-    @availability = true
+    @request_status = "pending"
+  end
+
+def self.all
+  if ENV['ENVIRONMENT'] == 'test'
+    connection = PG.connect(dbname: 'bnb_test')
+  else
+    connection = PG.connect(dbname: 'bnb')
+  end
+  request = connection.exec("SELECT * FROM bookingrequest WHERE request_status LIKE 'pending';")
+  request.map do |request|
+  Booking.new(renter_name: request['renter_name'], room_name: request['room_name'], date: request['date'], request_status: request['request_status'])
+  end
   end
