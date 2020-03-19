@@ -2,6 +2,7 @@ require 'sinatra/base'
 require_relative './lib/landlord'
 require_relative './lib/rooms'
 require_relative './lib/renter'
+require_relative './lib/booking'
 
 class BnB<Sinatra::Base
 	get '/test' do
@@ -32,6 +33,8 @@ class BnB<Sinatra::Base
  end
 
  get '/pending_requests' do
+p "first"
+	 p @requests = Booking.pending
  	erb :pending_requests
  end
 
