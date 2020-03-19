@@ -32,7 +32,7 @@ class BnB<Sinatra::Base
  get '/pending_requests' do
  	erb :pending_requests
  end
- 
+
  get '/request' do
   erb :request
  end
@@ -42,6 +42,7 @@ class BnB<Sinatra::Base
  end
 
  get '/account/renter' do
+   @renter_name = Renter.fetch_renter_name[0]
 	 @rooms = Room.all
   erb :renter_dashboard
  end
