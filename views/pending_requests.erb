@@ -25,7 +25,14 @@
       <h1 class="text-center">Pending booking requests</h1>
     </div>
 
-  
+    <tbody>
+      <tr>
+        <th scope="row"><%= @requests.renter_name %></th>
+          <td><%= @requests.room_name %></td>
+          <td><%= @requests.date %></td>
+          <td><%= @requests.request_status %></td>
+      </tr>
+    </tbody>
 
   <form method="get" action="/pending_requests">
     <button type="submit" class="btn btn-primary" name="approve">Approve</button>

@@ -1,4 +1,20 @@
-View listings
-<% @rooms.each do |room| %>
-<li>  <%= room.room_name %></li>
-  <% end %>
+
+<!DOCTYPE html>
+  <html lang="en">
+<!--  head tags : https://www.w3schools.com/tags/tag_head.asp %> -->
+  <head>
+    <title>List of Properties</title>
+    <!-- here we link the css file -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+  </head>
+  <body>
+    <% @rooms.each do |room| %>
+    <li>  <%= room.room_name %></li>
+      <% end %>
+      <div class="card">
+        <form method="get" action="/request">
+        <button>Request a booking</button>
+        </form>
+      </div>
+  </body>
+  </html>
