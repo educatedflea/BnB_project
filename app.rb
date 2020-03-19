@@ -11,11 +11,11 @@ class BnB<Sinatra::Base
 	erb :index
  end
 
- get '/landlord/sign_in' do
+ get '/landlord_sign_in' do
   erb :landlord_signin
  end
 
- get '/account/landlord' do
+ get '/account_landlord' do
 	 @landlord_name = Landlord.fetch_landlord_name[0]
 	 erb :landlord_dashboard
  end
@@ -25,19 +25,21 @@ class BnB<Sinatra::Base
  end
 
  post '/create_listing' do
-	 Room.create(room_name: params[:room_name], date: params[:date], description: params[:description], price: params[:price])
- 	redirect '/account/renter'
+	p params[:room_name]
+	Room.create(room_name: params[:room_name], date: params[:date], description: params[:description], price: params[:price])
+ 	redirect '/account_renter'
  end
+
 
  get '/pending_requests' do
  	erb :pending_requests
  end
 
- get '/renter/sign_in' do
+ get '/renter_sign_in' do
   erb :renter_signin
  end
 
- get '/account/renter' do
+ get '/account_renter' do
 	 @rooms = Room.all
   erb :renter_dashboard
  end
