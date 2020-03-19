@@ -30,7 +30,6 @@ class BnB<Sinatra::Base
  	redirect '/account_renter'
  end
 
-
  get '/pending_requests' do
  	erb :pending_requests
  end
@@ -39,11 +38,15 @@ class BnB<Sinatra::Base
   erb :renter_signin
  end
 
- get '/account_renter' do
+  get '/account_renter' do
+   @renter_name = Renter.fetch_renter_name[0]
 	 @rooms = Room.all
   erb :renter_dashboard
  end
-
+  
+ get '/request' do
+  erb :request
+ end
 
 	run! if app_file ==$0
 end
