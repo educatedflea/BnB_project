@@ -39,10 +39,10 @@ class BnB<Sinatra::Base
   erb :renter_signin
  end
 
-  get '/account_renter' do
+  get '/view_listings' do
    @renter_name = Renter.fetch_renter_name[0]
 	 @rooms = Room.all
-  erb :renter_dashboard
+  erb :view_listings
  end
 
  get '/request' do

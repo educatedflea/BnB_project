@@ -1,1 +1,28 @@
-Test pending_requests
+<!DOCTYPE html>
+<html lang="en">
+
+<%# head tags : https://www.w3schools.com/tags/tag_head.asp %>
+<head>
+    <title>Landlord - pending requests</title>
+    <%# here we link the css file %>
+    <%# This is bootstrap library %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+</head>
+
+<body>
+  <div class="container custom-container">
+    <div class="col">
+      <h1 class="text-center">Pending booking requests</h1>
+    </div>
+
+  <form method="get" action="/pending_requests">
+
+    <button type="submit" class="btn btn-primary" name="approve">Approve</button>
+  </form>
+  
+  <form method="get" action="/account_landlord">
+    <button type="submit" class="btn btn-primary" >Back to the dashboard</button>
+  </form>
+</body>
+</html>
