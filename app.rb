@@ -32,6 +32,10 @@ class BnB<Sinatra::Base
  get '/pending_requests' do
  	erb :pending_requests
  end
+ 
+ get '/request' do
+  erb :request
+ end
 
  get '/renter/sign_in' do
   erb :renter_signin
