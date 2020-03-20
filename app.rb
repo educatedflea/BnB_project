@@ -18,16 +18,12 @@ class BnB<Sinatra::Base
  end
 
  post '/landlord_sign_in' do 
-  p "======= sign in "
-   p @landlord_name = Landlord.create(landlord_name: params[:landlord_name])
-p "========"
+   @landlord_name = Landlord.create(landlord_name: params[:landlord_name])
   redirect '/account_landlord'
  end 
 
  get '/account_landlord' do
-  p "======= dashboard"
-   p @landlord_name = Landlord.fetch_landlord_name[-1]
-   p "======="
+   @landlord_name = Landlord.fetch_landlord_name[-1]
 	erb :landlord_dashboard
  end
 
