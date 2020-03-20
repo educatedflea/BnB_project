@@ -47,3 +47,6 @@ INSERT INTO bookingRequest (renter_name, room_name, date, request_status) VALUES
 ALTER TABLE rooms CHANGE name room_name VARCHAR(60);
 
 EXEC sp_RENAME 'rooms.name' , 'room_name', 'COLUMN';
+
+-- 6. adding request_message to bookingrequest table
+ALTER TABLE bookingrequest ADD request_message VARCHAR(240);
