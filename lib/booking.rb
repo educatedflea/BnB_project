@@ -10,14 +10,15 @@ class Booking
     @request_status = "pending"
   end
 
-def self.all
+def self.pending
   if ENV['ENVIRONMENT'] == 'test'
     connection = PG.connect(dbname: 'bnb_test')
   else
     connection = PG.connect(dbname: 'bnb')
   end
-  request = connection.exec("SELECT * FROM bookingrequest WHERE request_status LIKE 'pending';")
+  request = connection.exec("SELECT * FROM bookingrequest;")
   request.map do |request|
   Booking.new(renter_name: request['renter_name'], room_name: request['room_name'], date: request['date'], request_status: request['request_status'])
   end
   end
+end

@@ -1,18 +1,54 @@
 <!DOCTYPE html>
-  <html lang="en">
 
+<html lang="en">
 <!--  head tags : https://www.w3schools.com/tags/tag_head.asp %> -->
-  <head>
-    <title>List of Properties</title>
-    <!-- here we link the css file -->
-    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
-  </head>
-  <body>
-      
-      <div class="card">
-        <form method="get" action="/request">
-        <button>Request a booking</button>
-        </form>
-      </div>
-  </body>
-  </html>
+
+<head>
+  <title>List of Properties</title>
+  <!-- here we link the css file -->
+  <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="d-flex flex-column">
+    <div class="col">
+      <h1 class="text-center">Available rooms:</h1>
+    </div>
+
+    <div class="col">
+      <table class="table">
+
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Room Name</th>
+            <th scope="col">Available Date</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @rooms.each do |room| %>
+          <tr>
+            <th scope="row"> <%= room.room_name %> </th>
+            <td> <%= room.date %></td>
+            <td> <%= room.description%></td>
+            <td> <%= room.price %></td>
+            <td>
+              <form method="get" action="/request">
+                <button type="submit" class="btn btn-primary" name="request">Request a booking</button>
+              </form>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+        
+      </table>
+
+    </div>
+  </div>
+</body>
+
+</html>
