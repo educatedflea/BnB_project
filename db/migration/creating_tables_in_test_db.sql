@@ -29,10 +29,13 @@ CREATE TABLE renter (
  );
 
 --  4. create bookingRequest table
-CREATE TABLE bookingRequest (
+CREATE TABLE bookingrequest (
 	id SERIAL PRIMARY KEY,
 	renter_name VARCHAR(60),
     room_name VARCHAR(60),
     date VARCHAR(60),
     request_status VARCHAR(60)
  );
+
+-- 5. adding request_message to bookingrequest table
+ALTER TABLE bookingrequest ADD request_message VARCHAR(240);
