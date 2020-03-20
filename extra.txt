@@ -1,0 +1,3 @@
+<% @rooms.each do |room| %>
+<li>  <%= room.room_name %></li>
+ <% end %> 
