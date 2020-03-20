@@ -42,9 +42,6 @@ class BnB<Sinatra::Base
  end
 
  post '/pending_requests' do
-	 p "*********"
-	 p params
-	 p "*********"
 	 Booking.approve(params[:id])
  end
 
@@ -67,11 +64,10 @@ class BnB<Sinatra::Base
   erb :request
  end
 
- post '/request' do 
-  @request_message = Booking.request_message(request_message: params[:request_message])
-
+ post '/request' do
+  # Booking.request_message(request_message: params[:request_message])
   redirect '/request_sent'
- end 
+ end
 
  get '/request_sent' do
   erb :request_sent

@@ -2,8 +2,6 @@ require 'pg'
 require_relative 'rooms'
 
 class Booking
-
-
   attr_reader :renter_name, :room_name, :date, :request_status, :request_message, :id
   def initialize(id:,renter_name:, room_name:, date:, request_status:, request_message:)
     @id = id
@@ -25,7 +23,7 @@ def self.pending
   request.map do |request|
   Booking.new(id: request['id'], renter_name: request['renter_name'], room_name: request['room_name'], date: request['date'], request_status: request['request_status'],request_message: request['request_message'])
   end
-  
+
   def self.request_message(request_message:)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'bnb_test')
@@ -38,7 +36,6 @@ def self.pending
 
 
   def self.approve(id)
-
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'bnb_test')
     else
@@ -49,4 +46,5 @@ def self.pending
   # result = connection.exec
   # ^^ this one changes bookingrequest status to approved
   end
+end
 end
