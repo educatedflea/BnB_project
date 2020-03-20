@@ -18,28 +18,29 @@
         <th scope="col">Room Name</th>
         <th scope="col">Date</th>
         <th scope="col">Request Status</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
         <% @requests.each do |request| %>
         <tr>
-        <td>  <%= request.room_name %></td>
-        <td> <%= request.renter_name %></td>
+        <td>  <%= request.renter_name %></td>
+        <td> <%= request.room_name %></td>
         <td> <%= request.date %></td>
         <td> <%= request.request_status %></td>
+        <td>
+          <form method="get" action="/pending_requests">
+            <button type="submit" class="btn btn-primary" name="approve">Approve</button>
+          </form>
+          <% p $approved%>
+        </td>
         </tr>
-          <% end %>
+        <% end %>
     </tbody>
   <div class="container custom-container">
     <div class="col">
       <h1 class="text-center">Pending booking requests</h1>
     </div>
-
-
-
-  <form method="get" action="/pending_requests">
-    <button type="submit" class="btn btn-primary" name="approve">Approve</button>
-  </form>
 
   <form method="get" action="/account_landlord">
     <button type="submit" class="btn btn-primary" >Dashboard</button>

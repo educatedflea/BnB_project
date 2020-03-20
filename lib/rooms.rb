@@ -37,14 +37,4 @@ end
   Room.new(room_name: result[0]['room_name'], date: result[0]['date'], description: result[0]['description'], price: result[0]['price'])
 end
 
-# def self.create(url:, title:)
-#   # return false unless true #is_url(url)
-#   if ENV['ENVIRONMENT'] == 'test'
-#     connection = PG.connect(dbname: 'bookmark_manager_test')
-#   else
-#     connection = PG.connect(dbname: 'bookmark_manager')
-#   end
-#   result = connection.exec("INSERT INTO bookmarks (title, url) VALUES('#{title}','#{url}') RETURNING id, url, title")
-#   Bookmark.new(id: result[0]["id"], title: result[0]['title'], url: result[0]['url'])
-# end
 end

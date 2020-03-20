@@ -3,7 +3,7 @@
 
 <%# head tags : https://www.w3schools.com/tags/tag_head.asp %>
 <head>
-    <title>VyralBnB</title>
+    <title>Make booking request</title>
     <%# here we link the css file %>
     <%# This is bootstrap library %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -14,11 +14,11 @@
 <div class="container request-container">
   <div class="col">
      <h1 class="text-center">Enquiry</h1>
-      <div class="form-group" col=>
-        <label for="exampleFormControlTextarea1">message</label>
+     <form action="/request_sent" method="get" class="form-group d-flex flex-column align-items-center">
+        <label for="exampleFormControlTextarea1">Leave your message here:</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-        <button type="button" class="btn btn-light">send</button>
-      </div>
+        <button type="submit" class="btn btn-primary" style="width: 100px;">Send</button>
+    </form>
   </div>
 </div>
 

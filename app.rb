@@ -27,14 +27,12 @@ class BnB<Sinatra::Base
  end
 
  post '/create_listing' do
-	p params[:room_name]
 	Room.create(room_name: params[:room_name], date: params[:date], description: params[:description], price: params[:price])
  	redirect '/account_renter'
  end
 
  get '/pending_requests' do
-p "first"
-	 p @requests = Booking.pending
+		@requests = Booking.pending
  	erb :pending_requests
  end
 
@@ -56,6 +54,10 @@ p "first"
  get '/request' do
   erb :request
  end
+
+ get '/request_sent' do 
+  erb :request_sent
+ end 
 
 	run! if app_file ==$0
 end
