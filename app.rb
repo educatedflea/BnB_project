@@ -42,8 +42,7 @@ class BnB<Sinatra::Base
 
  	post '/renter_sign_in' do
 		Renter.create(renter_name: params[:renter_name])
-		erb :renter_signin
-
+		redirect '/view_listings'
 	end
 
   get '/view_listings' do
@@ -56,9 +55,9 @@ class BnB<Sinatra::Base
   erb :request
  end
 
- get '/request_sent' do 
+ get '/request_sent' do
   erb :request_sent
- end 
+ end
 
 	run! if app_file ==$0
 end

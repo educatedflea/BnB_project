@@ -27,6 +27,6 @@ class Renter
       connection = PG.connect(dbname: 'bnb')
     end
     result = connection.exec("INSERT INTO renter (renter_name) VALUES ('#{renter_name}') RETURNING renter_name;")
-    Renter.new(renter_name: result[0]['renter_name'])
+    Renter.new(id: result[0]['id'], renter_name: result[0]['renter_name'])
   end
 end
