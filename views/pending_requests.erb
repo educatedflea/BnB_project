@@ -19,6 +19,7 @@
         <th scope="col">Date</th>
         <th scope="col">Request Status</th>
         <th scope="col">Action</th>
+        <th scope="col">Request Message</th>
       </tr>
     </thead>
     <tbody>
@@ -30,17 +31,17 @@
         <td> <%= request.request_status %></td>
         <td>
           <form method="post" action="/pending_requests">
-            <p>**********</p>
-            <%= request.id %>
-            <p>**********</p>
-
+       
              <input type="hidden" id="id" name="id" value="<%= request.id %>">
             <button type="submit" class="btn btn-primary" >Approve</button>
           </form>
-          <% p $approved%>
         </td>
-        </tr>
         <% end %>
+        <td> <%= @request_message %></td>
+        <% @request_message%>
+        </tr>
+
+      
     </tbody>
   <div class="container custom-container">
     <div class="col">
