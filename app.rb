@@ -28,7 +28,7 @@ class BnB<Sinatra::Base
 
  post '/create_listing' do
 	Room.create(room_name: params[:room_name], date: params[:date], description: params[:description], price: params[:price])
- 	redirect '/account_renter'
+ 	redirect '/view_listings'
  end
 
  get '/pending_requests' do
