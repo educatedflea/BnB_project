@@ -30,9 +30,11 @@
         <td> <%= request.date %></td>
         <td> <%= request.request_status %></td>
         <td>
-        <form method="get" action="/pending_requests">
-          <button type="submit" class="btn btn-primary" name="approve">Approve</button>
-        </form>
+          <form method="post" action="/pending_requests">
+       
+             <input type="hidden" id="id" name="id" value="<%= request.id %>">
+            <button type="submit" class="btn btn-primary" >Approve</button>
+          </form>
         </td>
         <% end %>
         <td> <%= @request_message %></td>

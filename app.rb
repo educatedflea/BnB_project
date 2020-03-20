@@ -17,10 +17,10 @@ class BnB<Sinatra::Base
   erb :landlord_signin
  end
 
- post '/landlord_sign_in' do 
+ post '/landlord_sign_in' do
    @landlord_name = Landlord.create(landlord_name: params[:landlord_name])
   redirect '/account_landlord'
- end 
+ end
 
  get '/account_landlord' do
    @landlord_name = Landlord.fetch_landlord_name[-1]
@@ -42,7 +42,10 @@ class BnB<Sinatra::Base
  end
 
  post '/pending_requests' do
-
+	 p "*********"
+	 p params
+	 p "*********"
+	 Booking.approve(params[:id])
  end
 
 	get '/renter_sign_in' do

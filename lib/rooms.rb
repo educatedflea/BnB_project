@@ -11,7 +11,7 @@ attr_reader :id, :room_name, :date, :description, :price, :landlord_name, :avail
     @price = price
     @landlord_name = landlord_name
     # ^ need to pick this up from landlord_name somehow?
-    @availability = true
+    @availability = "available"
   end
 
   def self.all
@@ -36,16 +36,6 @@ end
   Room.new(room_name: result[0]['room_name'], date: result[0]['date'], description: result[0]['description'], price: result[0]['price'])
 end
 
-def self.approve
-  if ENV['ENVIRONMENT'] == 'test'
-    connection = PG.connect(dbname: 'bnb_test')
-  else
-    connection = PG.connect(dbname: 'bnb')
-end
-result = connection.exec("UPDATE rooms SET availability='Not available' WHERE id=2;")
-# ^^ this one changes room availability status to unavailable
-# result = connection.exec
-# ^^ this one changes bookingrequest status to approved
-end
+
 
 end
